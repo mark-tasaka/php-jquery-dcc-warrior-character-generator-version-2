@@ -1,0 +1,263 @@
+/*White Box post data css*/
+
+#characterName{
+    position:absolute;
+    top: 125px;
+    left: 70px;
+	font-size: 0.75em;
+}
+
+#gender{
+    position:absolute;
+    top: 125px;
+    left: 260px;
+	font-size: 0.75em;
+}
+
+
+#alignment{
+    position:absolute;
+    top: 125px;
+    left: 360px;
+	font-size: 0.75em;
+}
+
+#playerName{
+    position:absolute;
+    top: 145px;
+    left: 430px;
+	font-size: 1em;
+}
+
+
+#armourName{
+    position:absolute;
+    top: 560px;
+    left: 305px;
+	font-size: 0.65em;
+}
+
+#armourAc{
+    position:absolute;
+    top: 800px;
+    left: 850px;
+	font-size: 0.8em;
+}
+
+
+#armourWeight{
+    position:absolute;
+    top: 800px;
+    left: 895px;
+	font-size: 0.8em;
+}
+
+#shieldName{
+    position:absolute;
+    top: 620px;
+    left: 804px;
+	font-size: 1.3em;
+}
+
+#shieldAc{
+    position:absolute;
+    top: 820px;
+    left: 850px;
+	font-size: 0.8em;
+}
+
+
+#shieldWeight{
+    position:absolute;
+    top: 820px;
+    left: 895px;
+	font-size: 0.8em;
+}
+
+
+#weaponsList{
+    position:absolute;
+    top: 595px;
+    left: 305px;
+	font-size: 0.65em;
+}
+
+#weaponsList2{
+    position:absolute;
+    top: 390px;
+    left: 710px;
+	font-size: 0.8em;
+}
+
+
+
+#totalArmourClassMod{
+    position:absolute;
+    top: 855px;
+    left: 850px;
+	font-size: 0.8em;
+}
+
+#totalArmourWeight{
+    position:absolute;
+    top: 820px;
+    left: 305px;
+	font-size: 0.5em;
+}
+
+#gearWeight{
+    position:absolute;
+    top: 832px;
+    left: 485px;
+	font-size: 0.5em;
+}
+
+
+
+#weaponNotes{
+    position:absolute;
+    top: 1143px;
+    left: 610px;
+	font-size: 0.4em;
+}
+
+
+#gearList{
+    position:absolute;
+    top: 560px;
+    left: 485px;
+	font-size: 0.6em;
+}
+
+#gearList2{
+    position:absolute;
+    top: 270px;
+    left: 900px;
+	font-size: 0.6em;
+}
+
+
+#clothingList{
+    position:absolute;
+    top: 570px;
+    left: 670px;
+	font-size: 0.6em;
+}
+
+#clothingList2{
+    position:absolute;
+    top: 570px;
+    left: 900px;
+	font-size: 0.6em;
+}
+
+#totalWeightCarried{
+    position:absolute;
+    top: 940px;
+    left: 95px;
+	font-size: 0.5em;
+}
+
+
+#hirelings{
+    position:absolute;
+    top: 960px;
+    left: 95px;
+	font-size: 0.5em;
+}
+
+
+#move{
+    position:absolute;
+    top: 1072px;
+    left: 165px;
+	font-size: 1em;
+}
+
+#abilityScoreGeneration{
+    position:absolute;
+    top: 1210px;
+    left: 60px;
+	font-size: 0.5em;
+}
+
+#lightLoad{
+    position:absolute;
+    top: 1086px;
+    left: 360px;
+	font-size: 0.65em;
+}
+
+#lightLoadChecked{
+    position:absolute;
+    top: 1075px;
+    left: 275px;
+	font-size: 1em;
+}
+
+#heavyLoad{
+    position:absolute;
+    top: 1135px;
+    left: 360px;
+	font-size: 0.65em;
+}
+
+
+#heavyLoadChecked{
+    position:absolute;
+    top: 1117px;
+    left: 275px;
+	font-size: 1em;
+}
+
+
+#wealth{
+    position:absolute;
+    top: 530px;
+    left: 725px;
+	font-size: 0.6em;
+}
+
+#coinWeight{
+    position:absolute;
+    top: 610px;
+    left: 760px;
+	font-size: 0.5em;
+}
+
+
+
+#level{
+    position:absolute;
+    top: 170px;
+    left: 230px;
+	font-size: 0.75em;
+}
+
+
+#characterRaceTitle{
+    position:absolute;
+    top: 830px;
+    left: 60px;
+	font-size: 0.7em;
+}
+
+
+#characterRaceTrait{
+    position:absolute;
+    top: 1025px;
+    left: 95px;
+	font-size: 0.5em;
+}
+
+#addLanguages{
+    position:absolute;
+    top: 1125px;
+    left: 95px;
+	font-size: 0.6em;
+}
+
+
+
+
+
