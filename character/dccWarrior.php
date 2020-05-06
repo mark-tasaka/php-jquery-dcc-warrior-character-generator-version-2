@@ -42,45 +42,24 @@
     include 'php/abilityScoreGen.php';
     include 'php/randomName.php';
     
-    /*
+
         if(isset($_POST["theCharacterName"]))
         {
             $characterName = $_POST["theCharacterName"];
     
         }
-        */
         
         if(isset($_POST["theGender"]))
         {
             $gender = $_POST["theGender"];
         }
-        
-        $characterName = getRandomName($gender);
 
-        $checkBoxVal = 0;
-    /*
-        if(isset($_POST["checkBoxRandomName"]))
-        {
-            $checkBoxVal = $_POST["checkBoxRandomName"];
-    
-        }
 
-        if($checkBoxVal == 1)
+        if(isset($_POST['theCheckBoxRandomName']) && $_POST['theCheckBoxRandomName'] == 1) 
         {
-            $characterName = "";
             $characterName = getRandomName($gender);
-        }*/
+        } 
 
-       // if()
-
-        //$pcName = "";
-
-        //getRandomName ($sex)
-
-
-    
-
-            
         if(isset($_POST["theAlignment"]))
         {
             $alignment = $_POST["theAlignment"];
@@ -91,13 +70,6 @@
             $level = $_POST["theLevel"];
         
         } 
-    
-        if(isset($_POST["theSavingThrows"]))
-        {
-            $saveThrowOption = $_POST["theSavingThrows"];
-        
-        } 
-    
         
         if(isset($_POST["theAbilityScore"]))
         {
@@ -119,14 +91,24 @@
         }
     
         $armourName = getArmour($armour)[0];
-        $armourDefense = getArmour($armour)[1];
-        $armourWeight = getArmour($armour)[2];
+        
+        $armourACBonus = getArmour($armour)[1];
+        $armourCheckPen = getArmour($armour)[2];
+        $armourSpeedPen = getArmour($armour)[3];
+        $armourFumbleDie = getArmour($armour)[4];
+
+        if(isset($_POST['theCheckBoxShield']) && $_POST['theCheckBoxShield'] == 1) 
+        {
+            $shieldName = getArmour(10)[0];
+            $shieldACBonus = getArmour(10)[1];
+            $shieldCheckPen = getArmour(10)[2];
+            $shieldSpeedPen = getArmour(10)[3];
+            $shieldFumbleDie = getArmour(10)[4];
+        } 
+        
     
     
-        $totalAcDefense = $armourDefense;
-    
-        $armourDefense = removeZero($armourDefense);
-        $armourWeight = removeZero($armourWeight);
+       $totalAcDefense = $armourACBonus;
     
     
         if(isset($_POST["theGold"]))
@@ -193,8 +175,6 @@
             array_push($gearNames, getGear($select)[0]);
         }
     
-    $saveMatrix = savingThrowMatrix ($level);
-    
     
     ?>
 
@@ -227,6 +207,7 @@
            ?>
        </span>
        
+       
        <span id="dieRollMethod"></span>
 
        
@@ -234,99 +215,14 @@
        
 
        
-       
-      <!-- <span id="missileAttack"></span>-->
-       
-       
        <span id="fighterAbility"></span>
        
 
        <span id="descendingAc"></span> 
        <span id="ascendingAc"></span>
        
-       <!--<span id="addLanguages"></span>-->
-       
        <span id="hitPoints"></span>
-       
-       <!--<span id="hitDie"></span>-->
-       
-       <span id="singleSave">
-           <?php
-           
-           if($saveThrowOption == 1)
-           {
-               echo singleSave ($level); 
-           }
-           else
-           {
-               echo "";
-           }
-           
-           ?>
-       </span>
-       
-       
-              
-       <span id="saveMatrix">
-           <?php
-           
-           if($saveThrowOption == 1)
-           {
-               echo ""; 
-           }
-           else
-           {
-               echo $saveMatrix[0];
-               echo "<br/>";
-               echo $saveMatrix[1] - $dwarfSaveMagic;
-               echo "<br/>";
-               echo $saveMatrix[2];
-               echo "<br/>";
-               echo $saveMatrix[3];
-               echo "<br/>";
-               echo $saveMatrix[4] - $dwarfSaveMagic;
-           }
-           
-           ?>
-       </span>
-       
-              <span id="saveMatrixDes">
-           <?php
-           
-           if($saveThrowOption == 1)
-           {
-               echo ""; 
-           }
-           else
-           {
-               echo "vs. Death/Poison";
-               echo "<br/>";
-               echo "vs. Wands/Rays";
-               echo "<br/>";
-               echo "vs. Paralyze/Stone";
-               echo "<br/>";
-               echo "vs. Dragon Breath";
-               echo "<br/>";
-               echo "vs. Spells/Staffs";
-           }
-           
-           ?>
-       </span>
-       
-        <span id="saveMatrixTitle">
-           <?php
-           
-           if($saveThrowOption == 1)
-           {
-               echo ""; 
-           }
-           else
-           {
-               echo "Saving Throws";
-           }
-           
-           ?>
-       </span>
+
        
        <span id="level">
            <?php
@@ -352,7 +248,14 @@
               
        <span id="armourName">
            <?php
-                echo $armourName;
+           if($armourName == "")
+           {
+               echo $shieldName;
+           }
+           else
+           {
+            echo $armourName . " & " . $shieldName;
+           }
            ?>
         </span>
        

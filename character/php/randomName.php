@@ -386,11 +386,11 @@ function getRandomName ($sex)
     $name = "";
     $theSex;
 
-    if($sex == 0)
+    if($sex == 'Male')
     {
         $theSex = 'Male';
     }
-    else if($sex == 1)
+    else if($sex == 'Female')
     {
         $theSex = 'Female';
     }
