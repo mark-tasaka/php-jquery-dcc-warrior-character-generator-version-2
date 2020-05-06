@@ -23,6 +23,7 @@
     <script type="text/javascript" src="./js/abilityScoreAddition.js"></script>
     <script type="text/javascript" src="./js/attackBonus.js"></script>
     <script type="text/javascript" src="./js/classAbilities.js"></script>
+    <script type="text/javascript" src="./js/occupation.js"></script>
     
     
     
@@ -104,11 +105,21 @@
             $shieldCheckPen = getArmour(10)[2];
             $shieldSpeedPen = getArmour(10)[3];
             $shieldFumbleDie = getArmour(10)[4];
+        }
+        else
+        {
+            $shieldName = getArmour(11)[0];
+            $shieldACBonus = getArmour(11)[1];
+            $shieldCheckPen = getArmour(11)[2];
+            $shieldSpeedPen = getArmour(11)[3];
+            $shieldFumbleDie = getArmour(11)[4];
         } 
-        
-    
-    
-       $totalAcDefense = $armourACBonus;
+
+       $totalAcDefense = $armourACBonus + $shieldACBonus;
+       $totalAcCheckPen = $armourCheckPen + $shieldCheckPen;
+       $speedPenality = $armourSpeedPen;
+
+       $speed = 30 - $armourSpeedPen;
     
     
         if(isset($_POST["theGold"]))
@@ -183,6 +194,8 @@
 <!-- JQuery -->
   <img id="character_sheet"/>
    <section>
+       
+		<span id="profession"></span>
            
 		<span id="strength"></span>
 		<span id="agility"></span> 
@@ -217,9 +230,7 @@
        
        <span id="fighterAbility"></span>
        
-
-       <span id="descendingAc"></span> 
-       <span id="ascendingAc"></span>
+       <span id="armourClass"></span>
        
        <span id="hitPoints"></span>
 
@@ -244,6 +255,13 @@
                 echo $alignment;
            ?>
         </span>
+        
+        <span id="speed">
+           <?php
+                echo $speed;
+           ?>
+        </span>
+
 
               
        <span id="armourName">
@@ -252,12 +270,56 @@
            {
                echo $shieldName;
            }
+           else if($shieldName == "")
+           {
+                echo $armourName;
+           }
            else
            {
             echo $armourName . " & " . $shieldName;
            }
            ?>
         </span>
+
+        <span id="armourACBonus">
+            <?php
+                echo $totalAcDefense;
+            ?>
+        </span>
+
+        
+        <span id="armourACCheckPen">
+            <?php
+                echo $totalAcCheckPen;
+            ?>
+        </span>
+        
+        <span id="armourACSpeedPen">
+            <?php
+            if($speedPenality == 0)
+            {
+                echo "-";
+            }
+            else
+            {
+                echo "-" . $speedPenality;
+            }
+            ?>
+        </span>
+
+        <span id="fumbleDie">
+            <?php
+            if($armourName == "")
+            {
+                echo $shieldFumbleDie;
+            }
+            else
+            {
+                echo $armourFumbleDie;
+            }
+            ?>
+        </span>
+
        
        
        <span id="weaponsList">
@@ -378,6 +440,7 @@
         let level = '<?php echo $level ?>';
         let gender = '<?php echo $gender ?>';
         let armour = '<?php echo $armourName ?>';
+	    let	profession = getOccupation();
 
 		let fighterCharacter = {
 			"strength": strength,
@@ -392,9 +455,9 @@
             "agilityModifer": addModifierSign(agilityMod),
             "staminaModifer": addModifierSign(staminaMod),
             "luckModifer": addModifierSign(luckMod),
-            "acBase": 11 + agilityMod,
-            "ascendingAC": <?php echo $totalAcDefense ?> + 10 + agilityMod,
-            "descendingAC": 9 - <?php echo $totalAcDefense ?> - agilityMod,
+			"profession":  profession.occupation,
+            "acBase": 10 + agilityMod,
+            "armourClass": <?php echo $totalAcDefense ?> + 10 + agilityMod,
             "hp": getHitPoints (level, staminaMod)
 
 		};
@@ -413,7 +476,9 @@
         $("#character_sheet").attr("src", imgData);
       
 
-	  let data = Character();
+      let data = Character();
+      
+      $("#profession").html(data.profession);
 		 
       $("#strength").html(data.strength);
       
@@ -447,8 +512,7 @@
             
       $("#hitPoints").html(data.hp);
       
-      $("#ascendingAc").html(data.ascendingAC);
-      $("#descendingAc").html(data.descendingAC);
+      $("#armourClass").html(data.armourClass);
       
 
 	 

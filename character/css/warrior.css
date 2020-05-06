@@ -162,6 +162,21 @@ body{
 }
 
 
+#speed{
+    position:absolute;
+    top: 170px;
+    left: 475px;
+	font-size: 0.75em;
+}
+
+
+#profession{
+    position:absolute;
+    top: 125px;
+    left: 493px;
+	font-size: 0.75em;
+}
+
 #exNextLevel{
     position:absolute;
     top: 240px;
@@ -185,11 +200,39 @@ body{
 	font-size: 1.1em;
 }
 
-#ascendingAc{
+#armourClass{
     position:absolute;
-    top: 332px;
-    left: 125px;
-	font-size: 1.1em;
+    top: 270px;
+    left: 87px;
+	font-size: 1.2em;
+}
+
+#armourACBonus{
+    position:absolute;
+    top: 920px;
+    left: 78px;
+	font-size: 0.8em;
+}
+
+#armourACCheckPen{
+    position:absolute;
+    top: 920px;
+    left: 138px;
+	font-size: 0.8em;
+}
+
+#armourACSpeedPen{
+    position:absolute;
+    top: 920px;
+    left: 203px;
+	font-size: 0.8em;
+}
+
+#fumbleDie{
+    position:absolute;
+    top: 920px;
+    left: 265px;
+	font-size: 0.8em;
 }
 
 #hitPoints{
