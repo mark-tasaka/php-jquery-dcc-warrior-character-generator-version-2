@@ -120,6 +120,17 @@
        $speedPenality = $armourSpeedPen;
 
        $speed = 30 - $armourSpeedPen;
+
+       $reflexBase = savingThrowReflex($level);
+       $fortBase = savingThrowFort($level);
+       $willBase = savingThrowWill($level);
+
+       $criticalDie = criticalDie($level);
+
+       $deedDie = deedDie($level);
+
+
+
     
     
         if(isset($_POST["theGold"]))
@@ -212,6 +223,10 @@
 		<span id="intelligenceMod"></span>
 		<span id="personalityMod"></span>
        <span id="luckMod"></span>
+
+       <span id="reflex"></span>
+       <span id="fort"></span>
+       <span id="will"></span>
 		  
        
        <span id="gender">
@@ -317,6 +332,18 @@
             {
                 echo $armourFumbleDie;
             }
+            ?>
+        </span>
+
+        <span id="criticalDieTable">
+            <?php
+                echo $criticalDie;
+            ?>
+        </span>
+        
+        <span id="deedDie">
+            <?php
+                echo $deedDie;
             ?>
         </span>
 
@@ -458,7 +485,10 @@
 			"profession":  profession.occupation,
             "acBase": 10 + agilityMod,
             "armourClass": <?php echo $totalAcDefense ?> + 10 + agilityMod,
-            "hp": getHitPoints (level, staminaMod)
+            "hp": getHitPoints (level, staminaMod),
+            "reflex": <?php echo $reflexBase ?> + agilityMod,
+            "fort": <?php echo $fortBase ?> + staminaMod,
+            "will": <?php echo $willBase ?> + personalityMod 
 
 		};
 	    if(fighterCharacter.hitPoints <= 0 ){
@@ -513,6 +543,10 @@
       $("#hitPoints").html(data.hp);
       
       $("#armourClass").html(data.armourClass);
+      
+      $("#reflex").html(addModifierSign(data.reflex));
+      $("#fort").html(addModifierSign(data.fort));
+      $("#will").html(addModifierSign(data.will));
       
 
 	 

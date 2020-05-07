@@ -242,34 +242,41 @@ body{
 	font-size: 1.1em;
 }
 
-#singleSave{
+#reflex{
     position:absolute;
-    top: 320px;
-    left: 385px;
-	font-size: 1.8em;
+    top: 260px;
+    left: 655px;
+	font-size: 1em;
 }
 
-#saveMatrix{
+#fort{
     position:absolute;
-    top: 830px;
-    left: 865px;
-	font-size: 0.7em;
+    top: 285px;
+    left: 655px;
+	font-size: 1em;
 }
 
-
-#saveMatrixDes{
+#will{
     position:absolute;
-    top: 830px;
-    left: 700px;
-	font-size: 0.7em;
+    top: 310px;
+    left: 655px;
+	font-size: 1em;
 }
 
-#saveMatrixTitle{
+#criticalDieTable{
     position:absolute;
-    top: 800px;
-    left: 735px;
-	font-size: 0.8em;
+    top: 409px;
+    left: 480px;
+	font-size: 0.6em;
 }
+
+#deedDie{
+    position:absolute;
+    top: 353px;
+    left: 480px;
+	font-size: 0.6em;
+}
+
 
 
 #melee{

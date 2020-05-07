@@ -1,5 +1,5 @@
-/*White Box RPG character generator
-designed by Mark Tasaka 2018*/
+/*Dungeon Crawl Classics Character Generator
+designed by Mark Tasaka 2020*/
 
 function abilityScoreModifier(abilityScore)
 {
