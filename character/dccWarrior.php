@@ -24,6 +24,8 @@
     <script type="text/javascript" src="./js/attackBonus.js"></script>
     <script type="text/javascript" src="./js/classAbilities.js"></script>
     <script type="text/javascript" src="./js/occupation.js"></script>
+    <script type="text/javascript" src="./js/luckySign.js"></script>
+    <script type="text/javascript" src="./js/adjustments.js"></script>
     
     
     
@@ -128,6 +130,13 @@
        $criticalDie = criticalDie($level);
 
        $deedDie = deedDie($level);
+
+       $actionDice = actionDice($level);
+
+       $threatRange = threatRange($level);
+
+       $title = title($level, $alignment);
+
 
 
 
@@ -347,6 +356,30 @@
             ?>
         </span>
 
+        <span id="initiative">
+        </span>
+        
+        <span id="actionDice">
+            <?php
+                echo $actionDice;
+            ?>
+        </span>
+
+        <span id="threatRange">
+            <?php
+                echo $threatRange;
+            ?>
+        </span>
+        
+        <span id="title">
+            <?php
+                echo $title;
+            ?>
+        </span>
+
+        
+		<p id="birthAugur"><span id="luckySign"></span>: <span id="luckyRoll"></span> (<span id="LuckySignBonus"></span>)</p>
+
        
        
        <span id="weaponsList">
@@ -468,6 +501,9 @@
         let gender = '<?php echo $gender ?>';
         let armour = '<?php echo $armourName ?>';
 	    let	profession = getOccupation();
+	    let birthAugur = getLuckySign();
+       /* let bonusLanguages = getBonusLanguages(intelligenceModifier, birthAugur);*/
+	    let baseAC = getBaseArmourClass(agilityMod)  + adjustAC(birthAugur, luckMod);
 
 		let fighterCharacter = {
 			"strength": strength,
@@ -483,12 +519,15 @@
             "staminaModifer": addModifierSign(staminaMod),
             "luckModifer": addModifierSign(luckMod),
 			"profession":  profession.occupation,
-            "acBase": 10 + agilityMod,
+            "acBase": baseAC + agilityMod,
+			"luckySign": birthAugur.luckySign,
+			"luckyRoll": birthAugur.luckyRoll,
             "armourClass": <?php echo $totalAcDefense ?> + 10 + agilityMod,
             "hp": getHitPoints (level, staminaMod),
             "reflex": <?php echo $reflexBase ?> + agilityMod,
             "fort": <?php echo $fortBase ?> + staminaMod,
-            "will": <?php echo $willBase ?> + personalityMod 
+            "will": <?php echo $willBase ?> + personalityMod,
+            "initiative": <?php echo $level ?> + agilityMod 
 
 		};
 	    if(fighterCharacter.hitPoints <= 0 ){
@@ -547,6 +586,12 @@
       $("#reflex").html(addModifierSign(data.reflex));
       $("#fort").html(addModifierSign(data.fort));
       $("#will").html(addModifierSign(data.will));
+      
+      $("#initiative").html(addModifierSign(data.initiative));
+      
+      $("#luckySign").html(data.luckySign);
+      $("#luckyRoll").html(data.luckyRoll);    
+      $("#LuckySignBonus").html(data.luckModifer);
       
 
 	 

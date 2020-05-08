@@ -277,6 +277,34 @@ body{
 	font-size: 0.6em;
 }
 
+#initiative{
+    position:absolute;
+    top: 335px;
+    left: 495px;
+	font-size: 0.6em;
+}
+
+#actionDice{
+    position:absolute;
+    top: 372px;
+    left: 470px;
+	font-size: 0.6em;
+}
+
+#threatRange{
+    position:absolute;
+    top: 390px;
+    left: 480px;
+	font-size: 0.6em;
+}
+
+#birthAugur{
+    position:absolute;
+    top: 270px;
+    left: 735px;
+    font-size: 0.65em;
+    width: 180px;
+}
 
 
 #melee{

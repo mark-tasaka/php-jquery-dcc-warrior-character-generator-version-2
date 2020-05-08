@@ -125,7 +125,7 @@ function getOccupation(){
 		{"occupation": "Soldier", "race": "Human", "trainedWeapon": "Spear", "damage": "1d8", "tradeGoods": ""}
 		];
 	
-		return occupations[Math.floor(Math.random() * occupations.length-1)]; 
+		return occupations[Math.floor(Math.random() * occupations.length)]; 
    // return occupations[82];
 		
 }

@@ -22,6 +22,15 @@
 	font-size: 0.75em;
 }
 
+
+#title{
+    position:absolute;
+    top: 170px;
+    left: 295px;
+	font-size: 0.75em;
+}
+
+
 #playerName{
     position:absolute;
     top: 145px;

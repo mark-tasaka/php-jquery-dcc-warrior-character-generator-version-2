@@ -189,5 +189,143 @@ function deedDie($level)
     return $deedDie;
 }
 
+function actionDice($level)
+{
+    $actionDice = "";
+
+    if($level <= 4)
+    {
+        $actionDice = "1d20";
+    }
+
+    if($level == 5)
+    {
+        $actionDice = "1d20+1d14";
+    }
+
+    if($level == 6)
+    {
+        $actionDice = "1d20+1d16";
+    }
+
+    if($level >= 7 && $level <= 9)
+    {
+        $actionDice = "1d20+1d20";
+    }
+
+    if($level == 10)
+    {
+        $actionDice = "1d20+1d20+1d14";
+    }
+
+    return $actionDice;
+}
+
+
+function threatRange($level)
+{
+    $threat = "";
+
+    if($level <= 4)
+    {
+        $threat = "19-20";
+    }
+
+    if($level >= 5 && $level <= 8)
+    {
+        $threat = "18-20";
+    }
+
+    if($level >= 9)
+    {
+        $threat = "17-20";
+    }
+
+    return $threat;
+
+}
+
+function title($level, $alignment)
+{
+    $title = "";
+
+    if($alignment == "Lawful")
+    {
+
+        if($level == 1)
+        {
+            $title = "Squire";
+        }
+        else if($level == 2)
+        {
+            $title = "Champion";
+        }
+        else if($level == 3)
+        {
+            $title = "Knight";
+        }
+        else if($level == 4)
+        {
+            $title = "Cavalier";
+        }
+        else
+        {
+            $title = "Paladin";
+        }
+
+    }
+
+    if($alignment == "Neutral")
+    {
+        if($level == 1)
+        {
+            $title = "Wilding";
+        }
+        else if($level == 2)
+        {
+            $title = "Barbarian";
+        }
+        else if($level == 3)
+        {
+            $title = "Berserker";
+        }
+        else if($level == 4)
+        {
+            $title = "Headperson";
+        }
+        else
+        {
+            $title = "Chieftain";
+        }
+    }
+
+    if($alignment == "Chaotic")
+    {
+        if($level == 1)
+        {
+            $title = "Bandit";
+        }
+        else if($level == 2)
+        {
+            $title = "Brigand";
+        }
+        else if($level == 3)
+        {
+            $title = "Marauder";
+        }
+        else if($level == 4)
+        {
+            $title = "Ravager";
+        }
+        else
+        {
+            $title = "Reaver";
+        }
+    }
+
+return $title;
+
+}
+
 
 ?>
