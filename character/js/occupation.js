@@ -10,7 +10,7 @@ function getOccupation(){
 		{"occupation": "Dwarven Blacksmith", "race": "Dwarf", "trainedWeapon": "Hammer (as Club)", "damage": "1d4", "tradeGoods": "Mithril, 1 oz."},
 		{"occupation": "Dwarven Riveter", "race": "Dwarf", "trainedWeapon": "Hammer (as Club)", "damage": "1d4", "tradeGoods": "Mithril, 1 oz."},
 		{"occupation": "Dwarven Chestmaker", "race": "Dwarf", "trainedWeapon": "Chisel (as Dagger)", "damage": "1d4", "tradeGoods": "Wood, 10 lbs."},
-		{"occupation": "Dwarven Herder", "race": "Dwarf", "trainedWeapon": "Staff", "damage": "1d4", "tradeGoods": "Sow (see notes)"},
+		{"occupation": "Dwarven Herder", "race": "Dwarf", "trainedWeapon": "Staff", "damage": "1d4", "tradeGoods": "Sow"},
 		{"occupation": "Dwarven Miner", "race": "Dwarf", "trainedWeapon": "Pick (as Club)", "damage": "1d4", "tradeGoods": "Lantern"},
 		{"occupation": "Dwarven Linkman", "race": "Dwarf", "trainedWeapon": "Pick (as Club)", "damage": "1d4", "tradeGoods": "Lantern"},
 		{"occupation": "Dwarven Mushroom Farmer", "race": "Dwarf", "trainedWeapon": "Shovel (as Staff)", "damage": "1d4", "tradeGoods": "Sack"},
@@ -22,7 +22,7 @@ function getOccupation(){
 		{"occupation": "Elven Artisan", "race": "Elf", "trainedWeapon": "Staff", "damage": "1d4", "tradeGoods": "Clay, 1 lbs."},
 		{"occupation": "Elven Barrister", "race": "Elf", "trainedWeapon": "Quill (as Dart)", "damage": "1d4", "tradeGoods": "Book"},
 		{"occupation": "Elven Chandler", "race": "Elf", "trainedWeapon": "Scissors (as Dagger)", "damage": "1d4", "tradeGoods": "Candles, 20"},
-		{"occupation": "Elven Falconer", "race": "Elf", "trainedWeapon": "Dagger", "damage": "1d4", "tradeGoods": "Falcon (see notes)"},
+		{"occupation": "Elven Falconer", "race": "Elf", "trainedWeapon": "Dagger", "damage": "1d4", "tradeGoods": "Falcon"},
 		{"occupation": "Elven Forester", "race": "Elf", "trainedWeapon": "Staff", "damage": "1d4", "tradeGoods": "Herbs, 1 lbs."},
 		{"occupation": "Elven Herbalist", "race": "Elf", "trainedWeapon": "Staff", "damage": "1d4", "tradeGoods": "Herbs, 1 lbs."},
 		{"occupation": "Elven Glassblower", "race": "Elf", "trainedWeapon": "Hammer (as Club)", "damage": "1d4", "tradeGoods": "Glass Beads"},
@@ -45,7 +45,7 @@ function getOccupation(){
 		//Humans 31 - 40 Alchemist to Caravan Guard
 		// 32 - Animal Trainer
 		{"occupation": "Alchemist", "race": "Human", "trainedWeapon": "Staff", "damage": "1d4", "tradeGoods": "Oil, 1 flask"},
-		{"occupation": "Animal Trainer", "race": "Human", "trainedWeapon": "Club", "damage": "1d4", "tradeGoods": "Pony (see notes)"},
+		{"occupation": "Animal Trainer", "race": "Human", "trainedWeapon": "Club", "damage": "1d4", "tradeGoods": "Pony"},
 		{"occupation": "Armourer", "race": "Human", "trainedWeapon": "Hammer (as Club)", "damage": "1d4", "tradeGoods": "Iron Helmet"},
 		{"occupation": "Astrologer", "race": "Human", "trainedWeapon": "Dagger", "damage": "1d4", "tradeGoods": "Spyglass"},
 		{"occupation": "Barber", "race": "Human", "trainedWeapon": "Razor (as Dagger)", "damage": "1d4", "tradeGoods": "Scissors (as Dagger)"},
@@ -63,15 +63,15 @@ function getOccupation(){
 		{"occupation": "Cutpurse", "race": "Human", "trainedWeapon": "Dagger", "damage": "1d4", "tradeGoods": "Small Chest"},
 		{"occupation": "Ditchdigger", "race": "Human", "trainedWeapon": "Shovel (as Staff)", "damage": "1d4", "tradeGoods": "Fine Dirt, 1 lbs."},
 		//Humans 48 - 56 Farmer Potato to Onion
-		{"occupation": "Farmer Potato", "race": "Human", "trainedWeapon": "Pitchfork (as Spear)", "damage": "1d8", "tradeGoods": "Livestock (see notes)"},
-		{"occupation": "Farmer Wheat", "race": "Human", "trainedWeapon": "Pitchfork (as Spear)", "damage": "1d8", "tradeGoods": "Livestock (see notes)"},
-		{"occupation": "Farmer Turnip", "race": "Human", "trainedWeapon": "Pitchfork (as Spear)", "damage": "1d8", "tradeGoods": "Livestock (see notes)"},
-		{"occupation": "Farmer Corn", "race": "Human", "trainedWeapon": "Pitchfork (as Spear)", "damage": "1d8", "tradeGoods": "Livestock (see notes)"},
-		{"occupation": "Farmer Rice", "race": "Human", "trainedWeapon": "Pitchfork (as Spear)", "damage": "1d8", "tradeGoods": "Livestock (see notes)"},
-		{"occupation": "Farmer Parsnip", "race": "Human", "trainedWeapon": "Pitchfork (as Spear)", "damage": "1d8", "tradeGoods": "Livestock (see notes)"},
-		{"occupation": "Farmer Radish", "race": "Human", "trainedWeapon": "Pitchfork (as Spear)", "damage": "1d8", "tradeGoods": "Livestock (see notes)"},
-		{"occupation": "Farmer Rutabaga", "race": "Human", "trainedWeapon": "Pitchfork (as Spear)", "damage": "1d8", "tradeGoods": "Livestock (see notes)"},
-		{"occupation": "Farmer Turnip", "race": "Human", "trainedWeapon": "Pitchfork (as Spear)", "damage": "1d8", "tradeGoods": "Livestock (see notes)"},
+		{"occupation": "Farmer Potato", "race": "Human", "trainedWeapon": "Pitchfork (as Spear)", "damage": "1d8", "tradeGoods": "Livestock"},
+		{"occupation": "Farmer Wheat", "race": "Human", "trainedWeapon": "Pitchfork (as Spear)", "damage": "1d8", "tradeGoods": "Livestock"},
+		{"occupation": "Farmer Turnip", "race": "Human", "trainedWeapon": "Pitchfork (as Spear)", "damage": "1d8", "tradeGoods": "Livestock"},
+		{"occupation": "Farmer Corn", "race": "Human", "trainedWeapon": "Pitchfork (as Spear)", "damage": "1d8", "tradeGoods": "Livestock"},
+		{"occupation": "Farmer Rice", "race": "Human", "trainedWeapon": "Pitchfork (as Spear)", "damage": "1d8", "tradeGoods": "Livestock"},
+		{"occupation": "Farmer Parsnip", "race": "Human", "trainedWeapon": "Pitchfork (as Spear)", "damage": "1d8", "tradeGoods": "Livestock"},
+		{"occupation": "Farmer Radish", "race": "Human", "trainedWeapon": "Pitchfork (as Spear)", "damage": "1d8", "tradeGoods": "Livestock"},
+		{"occupation": "Farmer Rutabaga", "race": "Human", "trainedWeapon": "Pitchfork (as Spear)", "damage": "1d8", "tradeGoods": "Livestock"},
+		{"occupation": "Farmer Turnip", "race": "Human", "trainedWeapon": "Pitchfork (as Spear)", "damage": "1d8", "tradeGoods": "Livestock"},
 		// Humans 57 - 70: Fortune Teller to Jester
 		// 66 - Herder
 		{"occupation": "Fortune Teller", "race": "Human", "trainedWeapon": "Dagger", "damage": "1d4", "tradeGoods": "Tarot Deck"},
@@ -83,7 +83,7 @@ function getOccupation(){
 		{"occupation": "Beggar", "race": "Human", "trainedWeapon": "Sling", "damage": "1d4", "tradeGoods": "Crutches"},
 		{"occupation": "Healer", "race": "Human", "trainedWeapon": "Club", "damage": "1d4", "tradeGoods": "Holy Water, 1 Vial"},
 		{"occupation": "Herbalist", "race": "Human", "trainedWeapon": "Sling", "damage": "1d4", "tradeGoods": "Herbs, 1 lbs."},
-		{"occupation": "Herder", "race": "Human", "trainedWeapon": "Staff", "damage": "1d4", "tradeGoods": "Herding Dog (see notes)"},
+		{"occupation": "Herder", "race": "Human", "trainedWeapon": "Staff", "damage": "1d4", "tradeGoods": "Herding Dog"},
 		{"occupation": "Hunter", "race": "Human", "trainedWeapon": "Short Bow", "damage": "1d6", "tradeGoods": "Deer Pelt"},
 		{"occupation": "Huntsman", "race": "Human", "trainedWeapon": "Short Bow", "damage": "1d6", "tradeGoods": "Deer Pelt"},
 		{"occupation": "Indentured Servant", "race": "Human", "trainedWeapon": "Staff", "damage": "1d4", "tradeGoods": "Locket"},
@@ -113,16 +113,16 @@ function getOccupation(){
 		{"occupation": "Urchin", "race": "Human", "trainedWeapon": "Stick (as Club)", "damage": "1d4", "tradeGoods": "Begging Bowl"},
 		//92 - 96: Wainwright to Wood Seller
 		// Humans 92 -  Wainwright
-		{"occupation": "Wainwright", "race": "Human", "trainedWeapon": "Club", "damage": "1d4", "tradeGoods": "Push Cart (see notes)"},
+		{"occupation": "Wainwright", "race": "Human", "trainedWeapon": "Club", "damage": "1d4", "tradeGoods": "Push Cart"},
 		{"occupation": "Weaver", "race": "Human", "trainedWeapon": "Dagger", "damage": "1d4", "tradeGoods": "Fine Suit of Clothes"},
 		{"occupation": "Wizard's Apprentice", "race": "Human", "trainedWeapon": "Dagger", "damage": "1d4", "tradeGoods": "Black Grimoire"},
 		{"occupation": "Woodcutter", "race": "Human", "trainedWeapon": "Hand Axe", "damage": "1d6", "tradeGoods": "Bundle of Wood"},
 		{"occupation": "Woodmonger", "race": "Human", "trainedWeapon": "Hand Axe", "damage": "1d6", "tradeGoods": "Bundle of Wood"},
 		{"occupation": "Wood Seller", "race": "Human", "trainedWeapon": "Hand Axe", "damage": "1d6", "tradeGoods": "Bundle of Wood"},
 		// Humans 97 - 99: Mercenary to 
-		{"occupation": "Mercenary", "race": "Human", "trainedWeapon": "Longsword", "damage": "1d8", "tradeGoods": ""},
-		{"occupation": "Outlaw", "race": "Human", "trainedWeapon": "Short Sword", "damage": "1d6", "tradeGoods": ""},
-		{"occupation": "Soldier", "race": "Human", "trainedWeapon": "Spear", "damage": "1d8", "tradeGoods": ""}
+		{"occupation": "Mercenary", "race": "Human", "trainedWeapon": "Longsword", "damage": "1d8", "tradeGoods": "4 gp, 14 sp, 27 cp"},
+		{"occupation": "Outlaw", "race": "Human", "trainedWeapon": "Short Sword", "damage": "1d6", "tradeGoods": "Leather Armour"},
+		{"occupation": "Soldier", "race": "Human", "trainedWeapon": "Spear", "damage": "1d8", "tradeGoods": "Shield"}
 		];
 	
 		return occupations[Math.floor(Math.random() * occupations.length)]; 

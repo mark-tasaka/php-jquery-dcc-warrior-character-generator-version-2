@@ -236,6 +236,9 @@
        <span id="hitPoints"></span>
 
        <span id="languages"></span>
+       
+       <span id="trainedWeapon"></span>
+       <span id="tradeGoods"></span>
 
        
        <span id="level">
@@ -481,13 +484,15 @@
 			"luckySign": birthAugur.luckySign,
             "luckyRoll": birthAugur.luckyRoll,
             "move": <?php echo $speed ?> + addLuckToSpeed (birthAugur, luckMod),
+            "trainedWeapon": profession.trainedWeapon,
+            "tradeGoods": profession.tradeGoods,
             "addLanguages": "Common" + bonusLanguages,
             "armourClass": <?php echo $totalAcDefense ?> + baseAC,
             "hp": getHitPoints (level, staminaMod) + hitPointAdjustPerLevel(birthAugur,  luckMod),
 			"melee": strengthMod + meleeAdjust(birthAugur, luckMod),
 			"range": agilityMod + rangeAdjust(birthAugur, luckMod),
 			"meleeDamage": strengthMod + meleeDamageAdjust(birthAugur, luckMod),
-			"rangeDamage": agilityMod + rangeDamageAdjust(birthAugur, luckMod),
+			"rangeDamage": rangeDamageAdjust(birthAugur, luckMod),
             "reflex": <?php echo $reflexBase ?> + agilityMod + adjustRef(birthAugur, luckMod),
             "fort": <?php echo $fortBase ?> + staminaMod + adjustFort(birthAugur,luckMod),
             "will": <?php echo $willBase ?> + personalityMod + adjustWill(birthAugur, luckMod),
@@ -567,6 +572,8 @@
 
       
       $("#baseAC").html("Base AC: " + data.acBase);
+      $("#trainedWeapon").html("Trained Weapon: " + data.trainedWeapon);
+      $("#tradeGoods").html("Trade Goods: " + data.tradeGoods);
       
 
 	 
