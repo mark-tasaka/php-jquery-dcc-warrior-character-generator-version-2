@@ -1,5 +1,79 @@
 <?php
 
+function getSurname()
+{
+    $surnames = array(
+        "Hoxha",
+        "Shehu",
+        "Murad",
+        "Brahimi",
+        "Halili",
+        "Shkodra",
+        "Prishtina",
+        "Hovhannisyan",
+        "Khachatryan",
+        "Gruber",
+        "Bauer",
+        "Pichler",
+        "Hofer",
+        "Brunner",
+        "Wolf",
+        "Schuster",
+        "Jacobs",
+        "Dubois",
+        "Lambert",
+        "Nielsen",
+        "Christensen",
+        "Joensen",
+        "Korhonen",
+        "Laine",
+        "Heikkinen",
+        "Laitinen",
+        "Lahtinen",
+        "Thomas",
+        "Durand",
+        "Roux",
+        "André",
+        "Martinez",
+        "Müller",
+        "Schneider",
+        "Samaras",
+        "Papoutsis",
+        "Aivaliotis",
+        "Koufos",
+        "Russo",
+        "Giordano",
+        "Mariani",
+        "Martinelli",
+        "De Angelis",
+        "Krasniqi",
+        "Dijkstra",
+        "Bogdanov",
+        "Davidov",
+        "Kitanovski",
+        "Pereira",
+        "Marques",
+        "Khan",
+        "McLaughlin",
+        "Narayan",
+        "Maharaj",
+        "Lavoie",
+        "Reyes",
+        "Rosario",
+        "Vásquez",
+        "Vargas",
+        "Trevino",
+        "Reyes"
+    );
+        
+    $numberNames = count($surnames);
+    
+    $randomName = rand (0, ($numberNames - 1) );
+    
+    return $surnames[$randomName];
+}
+
+
 function getRandomSex()
 {
     $sex = "";

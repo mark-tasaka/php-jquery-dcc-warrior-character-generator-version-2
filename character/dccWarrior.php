@@ -26,6 +26,7 @@
     <script type="text/javascript" src="./js/occupation.js"></script>
     <script type="text/javascript" src="./js/luckySign.js"></script>
     <script type="text/javascript" src="./js/adjustments.js"></script>
+    <script type="text/javascript" src="./js/languages.js"></script>
     
     
     
@@ -39,7 +40,6 @@
     include 'php/checks.php';
     include 'php/weapons.php';
     include 'php/gear.php';
-    include 'php/coins.php';
     include 'php/classDetails.php';
     include 'php/clothing.php';
     include 'php/abilityScoreGen.php';
@@ -60,7 +60,7 @@
 
         if(isset($_POST['theCheckBoxRandomName']) && $_POST['theCheckBoxRandomName'] == 1) 
         {
-            $characterName = getRandomName($gender);
+            $characterName = getRandomName($gender) . " " . getSurname();
         } 
 
         if(isset($_POST["theAlignment"]))
@@ -137,27 +137,17 @@
 
        $title = title($level, $alignment);
 
+       
+       if(isset($_POST["theLuckyWeapon"]))
+       {
+           $luckyWeapon = $_POST["theLuckyWeapon"];
+       } 
 
 
-
-    
-    
-        if(isset($_POST["theGold"]))
-        {
-            $coins = $_POST["theGold"];
-        }
-    
-        $coinQuantity = getCoins($coins)[0];
-        $coinType = getCoins($coins)[1];
-        $coinQuantity2 = getCoins($coins)[2];
-        $coinType2 = getCoins($coins)[3];
-    
-    
          
         $weaponArray = array();
         $weaponNames = array();
         $weaponDamage = array();
-        $weaponWeight = array();
     
     
         if(isset($_POST["theWeapons"]))
@@ -178,19 +168,8 @@
         array_push($weaponDamage, getWeapon($select)[1]);
     }
         
-    $totalWeaponWeight = 0;
-    
-    foreach($weaponArray as $select)
-    {
-        array_push($weaponWeight, getWeapon($select)[2]);
-        $totalWeaponWeight += getWeapon($select)[2];
-    }
-    
-    
-
         $gearArray = array();
         $gearNames = array();
-        $gearWeight = array();
     
     
         if(isset($_POST["theGear"]))
@@ -250,13 +229,13 @@
        
        <span id="class">Warrior</span>
        
-
-       
-       <span id="fighterAbility"></span>
-       
        <span id="armourClass"></span>
+
+       <span id="baseAC"></span>
        
        <span id="hitPoints"></span>
+
+       <span id="languages"></span>
 
        
        <span id="level">
@@ -280,11 +259,7 @@
            ?>
         </span>
         
-        <span id="speed">
-           <?php
-                echo $speed;
-           ?>
-        </span>
+        <span id="speed"></span>
 
 
               
@@ -380,35 +355,32 @@
         
 		<p id="birthAugur"><span id="luckySign"></span>: <span id="luckyRoll"></span> (<span id="LuckySignBonus"></span>)</p>
 
+        <span id="luckyWeapon">
+            <?php
+                echo $luckyWeapon;
+            ?>
+        </span>
+        
+        <span id="melee"></span>
+        <span id="range"></span>
+        
+        <span id="meleeDamage"></span>
+        <span id="rangeDamage"></span>
+
        
        
        <span id="weaponsList">
            <?php
-           $val1 = 0;
-           $val2 = 0;
-           $val3 = 0;
            
            foreach($weaponNames as $theWeapon)
            {
                echo $theWeapon;
                echo "<br/>";
-               $val1 = isWeaponTwoHanded($theWeapon, $val1);
-               $val2 = isWeaponBastardSword($theWeapon, $val2);
            }
-           
-           $val3 = $val1 + $val2;
-           
-           $weaponNotes = weaponNotes($val3);
            
            ?>  
         </span>
-       
-       <span id="weaponNotes">
-           <?php
-                echo $weaponNotes;
-           ?>
-        </span>
-            
+
        <span id="weaponsList2">
            <?php
            foreach($weaponDamage as $theWeaponDam)
@@ -422,46 +394,32 @@
 
        <span id="gearList">
            <?php
+
+           $gearCount = count($gearNames);
+           $counter = 1;
            
            foreach($gearNames as $theGear)
            {
               echo $theGear;
-               echo "<br/>";
+
+              if($counter == $gearCount-1)
+              {
+                  echo " & ";
+              }
+              elseif($counter > $gearCount-1)
+              {
+                  echo ".";
+              }
+              else
+              {
+                  echo ", ";
+              }
+
+              ++$counter;
            }
            ?>
        </span>
-           
-       <span id="wealth">
-           <?php
-           
-           if($coinQuantity === 0)
-           {
-               echo "";
-           }
-           else
-           {
-           echo ($coinQuantity * 10) . $coinType;
-           echo "<br/>";
-           echo ($coinQuantity2 * 10) . $coinType2;
-               
-           }
-           ?>
-       </span>
-       
-       <span id="coinWeight">
-           <?php
-               
-           if($coinQuantity === 0)
-           {
-               echo "";
-           }
-           else
-           {
-                echo "Coin weight: " . ($coinQuantity+$coinQuantity2) . " lbs";
-           }
-           ?>
-       </span>
-       
+
 
        <span id="abilityScoreGeneration">
             <?php
@@ -502,10 +460,10 @@
         let armour = '<?php echo $armourName ?>';
 	    let	profession = getOccupation();
 	    let birthAugur = getLuckySign();
-       /* let bonusLanguages = getBonusLanguages(intelligenceModifier, birthAugur);*/
-	    let baseAC = getBaseArmourClass(agilityMod)  + adjustAC(birthAugur, luckMod);
+        let bonusLanguages = getBonusLanguages(intelligenceMod, birthAugur);
+	    let baseAC = getBaseArmourClass(agilityMod) + adjustAC(birthAugur, luckMod);
 
-		let fighterCharacter = {
+		let warriorCharacter = {
 			"strength": strength,
 			"agility": agility,
 			"stamina": stamina,
@@ -519,21 +477,27 @@
             "staminaModifer": addModifierSign(staminaMod),
             "luckModifer": addModifierSign(luckMod),
 			"profession":  profession.occupation,
-            "acBase": baseAC + agilityMod,
+            "acBase": baseAC,
 			"luckySign": birthAugur.luckySign,
-			"luckyRoll": birthAugur.luckyRoll,
-            "armourClass": <?php echo $totalAcDefense ?> + 10 + agilityMod,
-            "hp": getHitPoints (level, staminaMod),
-            "reflex": <?php echo $reflexBase ?> + agilityMod,
-            "fort": <?php echo $fortBase ?> + staminaMod,
-            "will": <?php echo $willBase ?> + personalityMod,
-            "initiative": <?php echo $level ?> + agilityMod 
+            "luckyRoll": birthAugur.luckyRoll,
+            "move": <?php echo $speed ?> + addLuckToSpeed (birthAugur, luckMod),
+            "addLanguages": "Common" + bonusLanguages,
+            "armourClass": <?php echo $totalAcDefense ?> + baseAC,
+            "hp": getHitPoints (level, staminaMod) + hitPointAdjustPerLevel(birthAugur,  luckMod),
+			"melee": strengthMod + meleeAdjust(birthAugur, luckMod),
+			"range": agilityMod + rangeAdjust(birthAugur, luckMod),
+			"meleeDamage": strengthMod + meleeDamageAdjust(birthAugur, luckMod),
+			"rangeDamage": agilityMod + rangeDamageAdjust(birthAugur, luckMod),
+            "reflex": <?php echo $reflexBase ?> + agilityMod + adjustRef(birthAugur, luckMod),
+            "fort": <?php echo $fortBase ?> + staminaMod + adjustFort(birthAugur,luckMod),
+            "will": <?php echo $willBase ?> + personalityMod + adjustWill(birthAugur, luckMod),
+            "initiative": <?php echo $level ?> + agilityMod + adjustInit(birthAugur, luckMod)
 
 		};
-	    if(fighterCharacter.hitPoints <= 0 ){
-			fighterCharacter.hitPoints = 1;
+	    if(warriorCharacter.hitPoints <= 0 ){
+			warriorCharacter.hitPoints = 1;
 		}
-		return fighterCharacter;
+		return warriorCharacter;
 	  
 	  }
 	  
@@ -589,9 +553,20 @@
       
       $("#initiative").html(addModifierSign(data.initiative));
       
+      $("#speed").html(data.move + "'");
+      
       $("#luckySign").html(data.luckySign);
       $("#luckyRoll").html(data.luckyRoll);    
       $("#LuckySignBonus").html(data.luckModifer);
+
+      $("#languages").html(data.addLanguages);
+      $("#melee").html(addModifierSign(data.melee));
+      $("#range").html(addModifierSign(data.range));
+      $("#meleeDamage").html(addModifierSign(data.meleeDamage));
+      $("#rangeDamage").html(addModifierSign(data.rangeDamage));
+
+      
+      $("#baseAC").html("Base AC: " + data.acBase);
       
 
 	 

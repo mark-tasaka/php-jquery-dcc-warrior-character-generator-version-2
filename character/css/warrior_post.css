@@ -86,16 +86,16 @@
 
 #weaponsList{
     position:absolute;
-    top: 595px;
-    left: 305px;
+    top: 600px;
+    left: 70px;
 	font-size: 0.65em;
 }
 
 #weaponsList2{
     position:absolute;
-    top: 390px;
-    left: 710px;
-	font-size: 0.8em;
+    top: 600px;
+    left: 250px;
+	font-size: 0.65em;
 }
 
 
@@ -133,17 +133,12 @@
 
 #gearList{
     position:absolute;
-    top: 560px;
-    left: 485px;
-	font-size: 0.6em;
+    top: 395px;
+    left: 600px;
+    font-size: 0.6em;
+    width: 310px;
 }
 
-#gearList2{
-    position:absolute;
-    top: 270px;
-    left: 900px;
-	font-size: 0.6em;
-}
 
 
 #clothingList{
@@ -158,21 +153,6 @@
     top: 570px;
     left: 900px;
 	font-size: 0.6em;
-}
-
-#totalWeightCarried{
-    position:absolute;
-    top: 940px;
-    left: 95px;
-	font-size: 0.5em;
-}
-
-
-#hirelings{
-    position:absolute;
-    top: 960px;
-    left: 95px;
-	font-size: 0.5em;
 }
 
 
@@ -190,50 +170,14 @@
 	font-size: 0.5em;
 }
 
-#lightLoad{
+
+
+#luckyWeapon{
     position:absolute;
-    top: 1086px;
-    left: 360px;
-	font-size: 0.65em;
-}
-
-#lightLoadChecked{
-    position:absolute;
-    top: 1075px;
-    left: 275px;
-	font-size: 1em;
-}
-
-#heavyLoad{
-    position:absolute;
-    top: 1135px;
-    left: 360px;
-	font-size: 0.65em;
-}
-
-
-#heavyLoadChecked{
-    position:absolute;
-    top: 1117px;
-    left: 275px;
-	font-size: 1em;
-}
-
-
-#wealth{
-    position:absolute;
-    top: 530px;
-    left: 725px;
+    top: 599px;
+    left: 475px;
 	font-size: 0.6em;
 }
-
-#coinWeight{
-    position:absolute;
-    top: 610px;
-    left: 760px;
-	font-size: 0.5em;
-}
-
 
 
 #level{
@@ -242,30 +186,6 @@
     left: 230px;
 	font-size: 0.75em;
 }
-
-
-#characterRaceTitle{
-    position:absolute;
-    top: 830px;
-    left: 60px;
-	font-size: 0.7em;
-}
-
-
-#characterRaceTrait{
-    position:absolute;
-    top: 1025px;
-    left: 95px;
-	font-size: 0.5em;
-}
-
-#addLanguages{
-    position:absolute;
-    top: 1125px;
-    left: 95px;
-	font-size: 0.6em;
-}
-
 
 
 

@@ -112,48 +112,6 @@ body{
 }
 
 
-
-#savePoisonDeath{
-    position:absolute;
-    top: 820px;
-    left: 80px;
-	font-size: 1.5em;
-}
-
-
-#saveWands{
-    position:absolute;
-    top: 865px;
-    left: 80px;
-	font-size: 1.5em;
-}
-
-
-
-#savePetrify{
-    position:absolute;
-    top: 908px;
-    left: 80px;
-	font-size: 1.5em;
-}
-
-
-#saveBreathAttack{
-    position:absolute;
-    top: 952px;
-    left: 80px;
-	font-size: 1.5em;
-}
-
-
-#saveSpell{
-    position:absolute;
-    top: 991px;
-    left: 80px;
-	font-size: 1.5em;
-}
-
-
 #class{
     position:absolute;
     top: 170px;
@@ -302,25 +260,51 @@ body{
     position:absolute;
     top: 270px;
     left: 735px;
-    font-size: 0.65em;
-    width: 180px;
+    font-size: 0.6em;
+    width: 175px;
+}
+
+#languages{
+    position:absolute;
+    top: 480px;
+    left: 365px;
+    font-size: 0.6em;
+    width: 175px;
 }
 
 
 #melee{
     position:absolute;
-    top: 270px;
-    left: 520px;
+    top: 243px;
+    left: 455px;
 	font-size: 1em;
 }
 
 
 #range{
     position:absolute;
-    top: 298px;
-    left: 520px;
+    top: 269px;
+    left: 455px;
 	font-size: 1em;
 }
+
+
+
+#meleeDamage{
+    position:absolute;
+    top: 243px;
+    left: 505px;
+	font-size: 1em;
+}
+
+
+#rangeDamage{
+    position:absolute;
+    top: 269px;
+    left: 505px;
+	font-size: 1em;
+}
+
 
 
 

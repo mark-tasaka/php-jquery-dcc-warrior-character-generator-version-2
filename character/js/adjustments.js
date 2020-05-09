@@ -5,7 +5,7 @@
       
       function getBaseLanguages(species, intelligence) {
           
-          let baseLanguage = "Common";
+          var baseLanguage = "Common";
           
           if(species === "Dwarf" && intelligence >=8){
               baseLanguage = "Common, Dwarven";
@@ -21,51 +21,7 @@
       }
 
 
-/*
-getBonusLanguages (intelligenceModifier, luckySign, luckModifier) - add randomly selected bonus languages base on the character's intelligence or if they have the Lucky Sign of Bird Song
-*/
-function getBonusLanguages (intelligenceModifier, luckySign, luckModifier, race) {
-	var bonusLanguages = 0;
-	if(bonusLanguages  != undefined && typeof bonusLanguages === 'number') {
-		bonusLanguages = intelligenceModifier;
-	}
-	else {
-		return "";
-	}
-	
-	if(luckySign != undefined && luckySign.luckySign === "Birdsong") {
-		bonusLanguages += luckModifier;
-	}
-	
-	if(bonusLanguages <=0) {
-		return "";
-	}
-	var result = ", " + addBonusLanguages().language, newLanguage = "";
-	
-	var bExtraBaseLangRace = false;
-	if(race === "Dwarf" || race === "Elf" || race === "Halfling"){
-		bExtraBaseLangRace = true;
-	}
-	// loop
-	for(var i = 1; i < bonusLanguages; i++){
-		// 1) get a random lang
-		newLanguage = addBonusLanguages().language;
-		// 2) check the new lang is not repeative
-		if(result.indexOf(newLanguage) != -1 || (bExtraBaseLangRace && newLanguage == race)){
-			i--;
-			// if yes continue;
-			continue;
-		} else{
-			// if not, add the new lang into the result
-			result += ", " + newLanguage;
-		}
 
-	}
-	return result;
-}
-	  
-
- 
 
 
 /*
@@ -164,7 +120,7 @@ the character received per level from their Stamina modifier and whether they ha
 */
 	  
 function hitPointAdjustPerLevel (luckySign, luckModifier) {
-   let adjust = 0;
+   var adjust = 0;
     if (luckySign != undefined && luckySign.luckySign === "Bountiful Harvest"){
         adjust = luckModifier;
      }
@@ -175,7 +131,7 @@ function hitPointAdjustPerLevel (luckySign, luckModifier) {
  getBaseArmourClass(agilityModifier)- returns the base armour class of the character
 */
 function getBaseArmourClass(agilityModifier){
-	let armourClass = 10;
+	var armourClass = 10;
 	baseArmourClass = armourClass + agilityModifier;
 	return baseArmourClass;
 }	  
@@ -224,7 +180,7 @@ function rangeAdjust (luckySign, luckModifier) {
 getSpeed (species) returns the base speed of the character based on their genotype
 */
 function getSpeed (species) {
-	let speed = 30;
+	var speed = 30;
     
 	if(species == "Dwarf" || species == "Halfling" ) {
 		speed = 20;
@@ -431,7 +387,7 @@ function addSign (modifier) {
 meleeDamageAdjust (luckySign, luckModifier) - adds bonus/penality to Melee attack based on whether the character possesses specific Lucky Signs
 */
 function meleeDamageAdjust (luckySign, luckModifier) {
-   let adjust = 0;
+   var adjust = 0;
     if (luckySign.luckySign != undefined && luckySign.luckySign === "Born on the battlefield"){
         adjust = luckModifier;
      }
@@ -446,7 +402,7 @@ function meleeDamageAdjust (luckySign, luckModifier) {
 rangeDamageAdjust (luckySign, luckModifier) - adds bonus/penality to Melee attack based on whether the character possesses specific Lucky Signs
 */
 function rangeDamageAdjust (luckySign, luckModifier) {
-   let adjust = 0;
+   var adjust = 0;
     if (luckySign.luckySign != undefined && luckySign.luckySign === "Born on the battlefield"){
         adjust = luckModifier;
      }
@@ -459,7 +415,7 @@ function rangeDamageAdjust (luckySign, luckModifier) {
 //select weapon damage type
 function damageAdjustSelect (occupation, meleeDamage, rangeDamage)
 {
-    let damageBonus = meleeDamage;
+    var damageBonus = meleeDamage;
     
     if(occupation.trainedWeapon == "Quill (as Dart)")
         {
@@ -490,29 +446,5 @@ function damageAdjustSelect (occupation, meleeDamage, rangeDamage)
     return damageBonus;
 }
 
-/*
-addBonusLanguages() - returns Randomly selected 0th Level Character Bonus Languages
-*/
-function addBonusLanguages() {
-	var bonusLanguages = [
-		{"language": "Alignment Tongue"},
-		{"language": "Dwarf"},
-		{"language": "Elf"},
-		{"language": "Halfling"},
-		{"language": "Gnome"},
-		{"language": "Bugbear"},
-		{"language": "Goblin"},
-		{"language": "Gnoll"},
-		{"language": "Hobgolin"},
-		{"language": "Kobold"},
-		{"language": "Lizardman"},
-		{"language": "Minotaur"},
-		{"language": "Ogre"},
-		{"language": "Orc"},
-		{"language": "Troglodyte"},
-		{"language": "Giant"}
-			];
-    return bonusLanguages[Math.floor(Math.random() * 16)]; 
-}
-	  
+
        
