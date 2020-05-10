@@ -122,7 +122,7 @@ function criticalDie($level)
         $critical = "1d24/V";
     }
 
-    if($level >= 6 && $level >= 7)
+    if($level >= 6 && $level <= 7)
     {
         $critical = "1d30/V";
     }
