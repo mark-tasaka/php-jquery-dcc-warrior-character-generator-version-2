@@ -1,6 +1,8 @@
 # php-jquery-dcc-warrior-character-generator-version-2
 Designed with PHP and jQuery, the Dungeon Crawl Classics Warrior Character Generator randomly generates a character.  The generator allows for the user to input different parameters to determine the character's level, equipment, weapons, alignment, etc.
 
+Update 1.11: May 10, 2020: minor modification to dccWarrior.php file. 
+
 Update 1.10: May 9, 2020: Corrected a coding issue with classDetails.php. 
 
 Update 1.09: May 9, 2020: A completed version of the Dungeon Crawl Classics Warrior Character Generator has been uploaded.  TO view a live version of this generator, please visit: https://www.tasaka-games.com/dcc/more/classes/warrior/
