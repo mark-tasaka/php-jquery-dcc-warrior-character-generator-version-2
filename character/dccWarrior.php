@@ -463,7 +463,7 @@
         let armour = '<?php echo $armourName ?>';
 	    let	profession = getOccupation();
 	    let birthAugur = getLuckySign();
-        let bonusLanguages = getBonusLanguages(intelligenceMod, birthAugur);
+        let bonusLanguages = getBonusLanguages(intelligenceMod, birthAugur, luckMod);
 	    let baseAC = getBaseArmourClass(agilityMod) + adjustAC(birthAugur, luckMod);
 
 		let warriorCharacter = {
